@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { render } from 'react-dom'
+import Container from './Container'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
+export default function App() {
+	return (
+		<div className="App">
+			<DndProvider backend={HTML5Backend}>
+				<Container />
+			</DndProvider>
+		</div>
+	)
 }
-
-export default App;
